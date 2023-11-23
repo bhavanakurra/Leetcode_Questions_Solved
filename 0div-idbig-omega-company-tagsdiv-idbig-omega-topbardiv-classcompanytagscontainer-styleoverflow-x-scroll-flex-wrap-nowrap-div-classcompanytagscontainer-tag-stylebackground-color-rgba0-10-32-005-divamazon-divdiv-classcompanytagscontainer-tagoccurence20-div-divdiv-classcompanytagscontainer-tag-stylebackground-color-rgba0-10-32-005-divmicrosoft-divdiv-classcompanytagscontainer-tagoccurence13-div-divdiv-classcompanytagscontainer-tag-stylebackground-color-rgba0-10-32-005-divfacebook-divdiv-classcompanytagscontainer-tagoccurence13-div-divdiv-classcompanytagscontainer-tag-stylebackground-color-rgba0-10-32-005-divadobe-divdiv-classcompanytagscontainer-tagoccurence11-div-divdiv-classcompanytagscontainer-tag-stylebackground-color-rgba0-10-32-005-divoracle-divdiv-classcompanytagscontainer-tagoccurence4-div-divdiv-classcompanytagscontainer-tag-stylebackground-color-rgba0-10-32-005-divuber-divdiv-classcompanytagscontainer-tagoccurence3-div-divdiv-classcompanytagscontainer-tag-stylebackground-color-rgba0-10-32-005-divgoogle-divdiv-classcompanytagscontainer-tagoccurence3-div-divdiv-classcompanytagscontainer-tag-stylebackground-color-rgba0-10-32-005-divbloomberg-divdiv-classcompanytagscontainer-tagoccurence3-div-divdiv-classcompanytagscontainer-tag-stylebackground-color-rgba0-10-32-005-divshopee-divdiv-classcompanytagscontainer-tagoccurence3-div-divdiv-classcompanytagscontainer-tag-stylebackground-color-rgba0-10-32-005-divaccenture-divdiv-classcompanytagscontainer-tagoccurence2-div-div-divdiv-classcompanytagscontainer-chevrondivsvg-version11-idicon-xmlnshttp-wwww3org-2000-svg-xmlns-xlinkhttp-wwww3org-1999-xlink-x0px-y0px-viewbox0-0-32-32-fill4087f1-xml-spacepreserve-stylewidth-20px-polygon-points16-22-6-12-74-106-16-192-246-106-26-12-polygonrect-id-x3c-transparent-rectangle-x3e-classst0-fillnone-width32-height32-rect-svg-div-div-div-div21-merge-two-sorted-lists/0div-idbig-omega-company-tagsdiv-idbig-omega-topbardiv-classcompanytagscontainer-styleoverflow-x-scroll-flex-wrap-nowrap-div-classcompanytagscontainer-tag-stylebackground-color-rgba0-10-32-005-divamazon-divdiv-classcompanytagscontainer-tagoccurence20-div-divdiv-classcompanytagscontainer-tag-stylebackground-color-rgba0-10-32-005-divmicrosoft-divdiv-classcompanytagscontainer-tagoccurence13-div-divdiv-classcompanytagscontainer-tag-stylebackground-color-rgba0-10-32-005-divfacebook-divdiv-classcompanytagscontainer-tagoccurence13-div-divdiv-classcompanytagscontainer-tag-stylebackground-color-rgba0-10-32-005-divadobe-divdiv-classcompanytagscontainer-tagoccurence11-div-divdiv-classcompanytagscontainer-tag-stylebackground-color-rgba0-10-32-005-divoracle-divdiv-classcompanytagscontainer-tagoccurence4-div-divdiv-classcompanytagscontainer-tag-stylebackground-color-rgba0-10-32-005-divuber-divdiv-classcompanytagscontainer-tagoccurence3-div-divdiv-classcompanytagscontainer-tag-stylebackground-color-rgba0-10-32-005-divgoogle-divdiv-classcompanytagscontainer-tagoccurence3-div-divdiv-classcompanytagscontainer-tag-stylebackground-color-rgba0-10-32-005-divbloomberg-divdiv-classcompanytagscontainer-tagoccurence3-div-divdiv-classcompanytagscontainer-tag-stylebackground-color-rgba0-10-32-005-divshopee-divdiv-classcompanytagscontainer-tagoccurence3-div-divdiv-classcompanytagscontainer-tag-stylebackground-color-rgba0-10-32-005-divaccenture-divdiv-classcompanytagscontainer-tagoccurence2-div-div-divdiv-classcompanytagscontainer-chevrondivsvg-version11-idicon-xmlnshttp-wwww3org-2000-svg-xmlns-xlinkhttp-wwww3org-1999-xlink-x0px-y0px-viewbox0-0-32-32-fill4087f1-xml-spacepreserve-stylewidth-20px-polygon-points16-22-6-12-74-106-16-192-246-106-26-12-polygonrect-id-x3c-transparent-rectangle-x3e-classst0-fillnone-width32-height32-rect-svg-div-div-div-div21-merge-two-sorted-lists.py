@@ -21,11 +21,24 @@ class Solution:
                 list2 = list2.next
                 res = res.next
                 
-        if list1: 
-            res.next = list1
+#         if list1: 
+#             res.next = list1
             
-        if list2:
-            res.next = list2
+#         if list2:
+#             res.next = list2
+
+        while list1:
+            res.next = ListNode(list1.val)
+            
+            list1 = list1.next
+            res = res.next
+            
+        while list2:
+            res.next = ListNode(list2.val)
+            
+            list2 = list2.next
+            res = res.next
+        
             
             
         return new_head.next
