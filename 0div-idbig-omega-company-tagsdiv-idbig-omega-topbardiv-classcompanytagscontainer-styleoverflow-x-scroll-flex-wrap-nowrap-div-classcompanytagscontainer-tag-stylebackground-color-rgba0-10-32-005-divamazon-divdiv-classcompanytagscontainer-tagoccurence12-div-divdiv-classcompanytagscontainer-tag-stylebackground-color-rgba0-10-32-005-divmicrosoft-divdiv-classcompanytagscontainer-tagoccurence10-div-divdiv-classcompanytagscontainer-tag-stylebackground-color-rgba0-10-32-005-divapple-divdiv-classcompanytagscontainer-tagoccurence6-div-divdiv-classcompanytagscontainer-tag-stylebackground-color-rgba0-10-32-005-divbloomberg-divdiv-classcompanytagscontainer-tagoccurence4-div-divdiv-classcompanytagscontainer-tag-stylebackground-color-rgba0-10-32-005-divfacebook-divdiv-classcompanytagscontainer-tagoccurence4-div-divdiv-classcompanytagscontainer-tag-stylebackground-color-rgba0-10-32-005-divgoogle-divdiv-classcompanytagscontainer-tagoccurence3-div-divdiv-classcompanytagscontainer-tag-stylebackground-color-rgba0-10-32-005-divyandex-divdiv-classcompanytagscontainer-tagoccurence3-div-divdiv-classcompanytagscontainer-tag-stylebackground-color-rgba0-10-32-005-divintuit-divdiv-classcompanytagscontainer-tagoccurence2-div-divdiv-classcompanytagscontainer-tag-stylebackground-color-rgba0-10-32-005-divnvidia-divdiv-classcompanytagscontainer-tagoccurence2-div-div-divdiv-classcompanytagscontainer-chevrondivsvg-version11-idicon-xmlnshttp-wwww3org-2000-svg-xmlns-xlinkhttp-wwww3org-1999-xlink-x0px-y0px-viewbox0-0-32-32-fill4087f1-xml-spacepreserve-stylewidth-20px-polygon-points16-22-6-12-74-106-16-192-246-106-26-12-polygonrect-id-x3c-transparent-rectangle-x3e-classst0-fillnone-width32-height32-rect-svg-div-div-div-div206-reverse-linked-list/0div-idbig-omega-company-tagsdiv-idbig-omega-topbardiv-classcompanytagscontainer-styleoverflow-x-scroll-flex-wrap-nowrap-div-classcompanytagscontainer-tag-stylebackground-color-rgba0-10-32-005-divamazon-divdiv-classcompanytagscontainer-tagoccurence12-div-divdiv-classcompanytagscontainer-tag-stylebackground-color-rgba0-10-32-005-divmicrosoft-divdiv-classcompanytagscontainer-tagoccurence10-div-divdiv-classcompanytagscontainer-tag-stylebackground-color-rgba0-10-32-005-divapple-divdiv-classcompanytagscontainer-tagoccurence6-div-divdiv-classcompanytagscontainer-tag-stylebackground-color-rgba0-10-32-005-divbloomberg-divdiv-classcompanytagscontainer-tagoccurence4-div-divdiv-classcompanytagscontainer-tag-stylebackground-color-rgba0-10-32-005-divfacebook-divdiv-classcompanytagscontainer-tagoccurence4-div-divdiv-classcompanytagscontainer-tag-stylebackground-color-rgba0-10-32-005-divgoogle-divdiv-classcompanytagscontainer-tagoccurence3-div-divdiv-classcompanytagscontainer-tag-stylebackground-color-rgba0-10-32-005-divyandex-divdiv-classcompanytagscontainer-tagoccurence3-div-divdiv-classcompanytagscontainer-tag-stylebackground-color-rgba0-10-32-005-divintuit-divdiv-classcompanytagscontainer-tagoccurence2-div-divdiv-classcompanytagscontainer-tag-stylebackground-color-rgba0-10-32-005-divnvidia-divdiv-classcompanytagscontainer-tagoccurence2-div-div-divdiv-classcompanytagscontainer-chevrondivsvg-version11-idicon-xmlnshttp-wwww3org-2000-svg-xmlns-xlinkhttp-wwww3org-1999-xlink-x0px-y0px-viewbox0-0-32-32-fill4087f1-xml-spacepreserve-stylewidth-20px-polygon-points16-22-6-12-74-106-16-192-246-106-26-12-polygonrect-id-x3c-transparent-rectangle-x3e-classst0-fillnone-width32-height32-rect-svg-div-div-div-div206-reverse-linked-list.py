@@ -1,10 +1,15 @@
 class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
-        if not head or not head.next: #reached end
-            return head
-        new_head = self.reverseList(head.next)
+        prev = None
+        curr = head
         
-        head.next.next = head
-        head.next = None
-        
-        return new_head
+        while curr:
+            tmp = curr.next #storing link for future
+            curr.next = prev #reversing link
+            
+            #sifting pointers
+            prev = curr
+            curr = tmp             
+            
+        return prev
+            
