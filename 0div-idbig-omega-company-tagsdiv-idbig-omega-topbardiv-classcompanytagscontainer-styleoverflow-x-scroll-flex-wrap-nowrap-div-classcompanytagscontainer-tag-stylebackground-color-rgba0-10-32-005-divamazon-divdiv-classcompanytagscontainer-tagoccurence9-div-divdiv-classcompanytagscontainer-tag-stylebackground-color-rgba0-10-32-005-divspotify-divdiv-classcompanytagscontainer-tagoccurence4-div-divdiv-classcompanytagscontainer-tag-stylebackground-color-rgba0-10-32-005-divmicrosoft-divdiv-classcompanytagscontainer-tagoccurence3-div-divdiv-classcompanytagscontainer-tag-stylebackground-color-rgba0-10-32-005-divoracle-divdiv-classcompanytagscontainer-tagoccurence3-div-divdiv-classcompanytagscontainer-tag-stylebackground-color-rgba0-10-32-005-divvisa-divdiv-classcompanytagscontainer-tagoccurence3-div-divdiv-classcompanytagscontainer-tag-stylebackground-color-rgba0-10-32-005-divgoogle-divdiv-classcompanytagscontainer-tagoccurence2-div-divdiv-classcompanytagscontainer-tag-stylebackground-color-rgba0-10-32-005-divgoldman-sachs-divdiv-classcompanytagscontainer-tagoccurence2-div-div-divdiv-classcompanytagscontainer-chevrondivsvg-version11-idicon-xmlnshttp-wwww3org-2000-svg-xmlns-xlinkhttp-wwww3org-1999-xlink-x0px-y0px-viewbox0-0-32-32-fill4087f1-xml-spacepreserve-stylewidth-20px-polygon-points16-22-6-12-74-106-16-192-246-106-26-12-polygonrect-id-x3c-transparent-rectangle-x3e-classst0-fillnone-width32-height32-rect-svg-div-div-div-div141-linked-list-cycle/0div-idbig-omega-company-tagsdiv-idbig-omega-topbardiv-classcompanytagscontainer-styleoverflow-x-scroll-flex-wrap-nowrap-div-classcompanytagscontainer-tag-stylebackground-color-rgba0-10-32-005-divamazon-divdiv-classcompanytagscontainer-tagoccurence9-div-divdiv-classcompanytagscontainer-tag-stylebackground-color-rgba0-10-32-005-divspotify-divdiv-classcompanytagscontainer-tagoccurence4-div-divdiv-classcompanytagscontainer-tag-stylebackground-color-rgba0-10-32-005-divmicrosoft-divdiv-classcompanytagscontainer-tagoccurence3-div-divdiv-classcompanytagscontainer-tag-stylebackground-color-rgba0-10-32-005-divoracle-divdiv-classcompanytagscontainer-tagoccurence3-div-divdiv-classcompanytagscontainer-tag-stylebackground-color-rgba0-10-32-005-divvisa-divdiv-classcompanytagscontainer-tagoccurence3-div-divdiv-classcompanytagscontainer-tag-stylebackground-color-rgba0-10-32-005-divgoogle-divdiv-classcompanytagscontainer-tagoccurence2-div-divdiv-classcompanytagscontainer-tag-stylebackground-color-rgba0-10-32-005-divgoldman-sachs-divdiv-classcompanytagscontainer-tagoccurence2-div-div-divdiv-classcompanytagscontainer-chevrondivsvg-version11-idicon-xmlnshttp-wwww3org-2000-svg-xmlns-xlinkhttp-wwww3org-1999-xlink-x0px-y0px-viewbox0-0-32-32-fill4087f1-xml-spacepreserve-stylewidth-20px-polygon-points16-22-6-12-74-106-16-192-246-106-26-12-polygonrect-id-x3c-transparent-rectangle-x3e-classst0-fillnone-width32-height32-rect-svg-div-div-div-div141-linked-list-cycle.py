@@ -7,6 +7,7 @@
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         
+        #with space - O(n) - #without space solution?
         arr = []
         curr = head
         while curr:
@@ -17,3 +18,5 @@ class Solution:
                 curr = curr.next
                 
         return False
+    
+        
