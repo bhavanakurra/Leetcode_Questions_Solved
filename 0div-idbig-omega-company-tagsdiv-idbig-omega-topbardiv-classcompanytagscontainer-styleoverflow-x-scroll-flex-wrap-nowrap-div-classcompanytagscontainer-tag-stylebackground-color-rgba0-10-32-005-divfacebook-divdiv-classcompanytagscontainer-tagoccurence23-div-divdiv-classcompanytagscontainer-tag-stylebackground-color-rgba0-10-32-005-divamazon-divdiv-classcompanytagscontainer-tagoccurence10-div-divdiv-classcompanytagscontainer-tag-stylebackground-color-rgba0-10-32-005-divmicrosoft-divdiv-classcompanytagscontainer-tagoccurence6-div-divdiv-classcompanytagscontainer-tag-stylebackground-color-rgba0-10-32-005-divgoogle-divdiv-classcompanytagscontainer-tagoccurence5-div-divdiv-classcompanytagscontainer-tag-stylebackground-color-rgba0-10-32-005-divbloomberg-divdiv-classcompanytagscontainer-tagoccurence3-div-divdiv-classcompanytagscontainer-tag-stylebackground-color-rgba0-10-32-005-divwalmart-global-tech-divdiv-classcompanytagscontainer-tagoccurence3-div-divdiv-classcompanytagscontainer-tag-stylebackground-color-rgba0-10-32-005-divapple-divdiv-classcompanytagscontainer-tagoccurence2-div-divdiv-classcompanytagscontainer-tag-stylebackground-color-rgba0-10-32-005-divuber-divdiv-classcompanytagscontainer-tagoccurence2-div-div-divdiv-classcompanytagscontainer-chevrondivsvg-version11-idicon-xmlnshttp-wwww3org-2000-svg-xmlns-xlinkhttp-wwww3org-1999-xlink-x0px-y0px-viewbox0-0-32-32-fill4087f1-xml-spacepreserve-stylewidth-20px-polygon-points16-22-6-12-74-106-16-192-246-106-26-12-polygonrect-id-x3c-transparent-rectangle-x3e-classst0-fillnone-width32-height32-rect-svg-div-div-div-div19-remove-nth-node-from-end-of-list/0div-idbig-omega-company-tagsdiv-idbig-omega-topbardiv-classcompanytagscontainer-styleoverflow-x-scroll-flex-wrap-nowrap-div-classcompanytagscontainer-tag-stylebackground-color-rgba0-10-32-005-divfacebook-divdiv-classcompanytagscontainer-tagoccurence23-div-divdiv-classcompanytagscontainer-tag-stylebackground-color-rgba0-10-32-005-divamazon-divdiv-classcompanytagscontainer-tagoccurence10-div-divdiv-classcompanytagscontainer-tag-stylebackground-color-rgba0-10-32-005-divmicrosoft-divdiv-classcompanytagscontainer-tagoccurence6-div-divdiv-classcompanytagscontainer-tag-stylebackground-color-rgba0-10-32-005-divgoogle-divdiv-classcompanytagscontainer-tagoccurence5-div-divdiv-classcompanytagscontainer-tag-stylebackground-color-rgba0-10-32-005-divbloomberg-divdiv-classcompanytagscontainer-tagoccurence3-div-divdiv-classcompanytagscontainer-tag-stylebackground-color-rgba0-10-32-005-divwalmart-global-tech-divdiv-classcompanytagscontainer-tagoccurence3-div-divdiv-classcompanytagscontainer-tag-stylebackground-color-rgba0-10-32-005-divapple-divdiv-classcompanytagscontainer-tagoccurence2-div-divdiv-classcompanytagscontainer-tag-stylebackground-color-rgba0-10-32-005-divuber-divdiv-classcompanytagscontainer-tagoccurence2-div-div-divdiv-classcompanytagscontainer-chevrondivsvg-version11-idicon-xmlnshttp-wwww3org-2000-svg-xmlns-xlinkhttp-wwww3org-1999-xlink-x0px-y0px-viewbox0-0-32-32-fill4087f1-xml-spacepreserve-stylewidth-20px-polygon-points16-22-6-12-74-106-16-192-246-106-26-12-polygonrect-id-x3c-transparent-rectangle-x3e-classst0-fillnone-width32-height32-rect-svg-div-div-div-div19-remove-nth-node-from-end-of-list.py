@@ -18,7 +18,8 @@ class Solution:
         print(total_length)
         
         if total_length == 1: #important [1], n=1
-            return global_head.next
+            #return global_head.next #important - not ListNode(None) or ListNode()
+            return None
         
         #Node to remove
         n = total_length - n + 1
@@ -27,14 +28,16 @@ class Solution:
         # if n<=0:
         #     return
             
-            
+         
+        #Solution without extra  space 
+        #New Linkedlist can be created - old solution
         len1 = 0
         prev = ListNode(None)
         curr = global_head
         while curr:
             len1 += 1
             if len1==n:
-                if n==1: #Important - [1,2], n=2
+                if n==1: #Important - [1,2], n=2 - removing first node
                     global_head = curr.next
                 else:
                     prev.next = curr.next        
