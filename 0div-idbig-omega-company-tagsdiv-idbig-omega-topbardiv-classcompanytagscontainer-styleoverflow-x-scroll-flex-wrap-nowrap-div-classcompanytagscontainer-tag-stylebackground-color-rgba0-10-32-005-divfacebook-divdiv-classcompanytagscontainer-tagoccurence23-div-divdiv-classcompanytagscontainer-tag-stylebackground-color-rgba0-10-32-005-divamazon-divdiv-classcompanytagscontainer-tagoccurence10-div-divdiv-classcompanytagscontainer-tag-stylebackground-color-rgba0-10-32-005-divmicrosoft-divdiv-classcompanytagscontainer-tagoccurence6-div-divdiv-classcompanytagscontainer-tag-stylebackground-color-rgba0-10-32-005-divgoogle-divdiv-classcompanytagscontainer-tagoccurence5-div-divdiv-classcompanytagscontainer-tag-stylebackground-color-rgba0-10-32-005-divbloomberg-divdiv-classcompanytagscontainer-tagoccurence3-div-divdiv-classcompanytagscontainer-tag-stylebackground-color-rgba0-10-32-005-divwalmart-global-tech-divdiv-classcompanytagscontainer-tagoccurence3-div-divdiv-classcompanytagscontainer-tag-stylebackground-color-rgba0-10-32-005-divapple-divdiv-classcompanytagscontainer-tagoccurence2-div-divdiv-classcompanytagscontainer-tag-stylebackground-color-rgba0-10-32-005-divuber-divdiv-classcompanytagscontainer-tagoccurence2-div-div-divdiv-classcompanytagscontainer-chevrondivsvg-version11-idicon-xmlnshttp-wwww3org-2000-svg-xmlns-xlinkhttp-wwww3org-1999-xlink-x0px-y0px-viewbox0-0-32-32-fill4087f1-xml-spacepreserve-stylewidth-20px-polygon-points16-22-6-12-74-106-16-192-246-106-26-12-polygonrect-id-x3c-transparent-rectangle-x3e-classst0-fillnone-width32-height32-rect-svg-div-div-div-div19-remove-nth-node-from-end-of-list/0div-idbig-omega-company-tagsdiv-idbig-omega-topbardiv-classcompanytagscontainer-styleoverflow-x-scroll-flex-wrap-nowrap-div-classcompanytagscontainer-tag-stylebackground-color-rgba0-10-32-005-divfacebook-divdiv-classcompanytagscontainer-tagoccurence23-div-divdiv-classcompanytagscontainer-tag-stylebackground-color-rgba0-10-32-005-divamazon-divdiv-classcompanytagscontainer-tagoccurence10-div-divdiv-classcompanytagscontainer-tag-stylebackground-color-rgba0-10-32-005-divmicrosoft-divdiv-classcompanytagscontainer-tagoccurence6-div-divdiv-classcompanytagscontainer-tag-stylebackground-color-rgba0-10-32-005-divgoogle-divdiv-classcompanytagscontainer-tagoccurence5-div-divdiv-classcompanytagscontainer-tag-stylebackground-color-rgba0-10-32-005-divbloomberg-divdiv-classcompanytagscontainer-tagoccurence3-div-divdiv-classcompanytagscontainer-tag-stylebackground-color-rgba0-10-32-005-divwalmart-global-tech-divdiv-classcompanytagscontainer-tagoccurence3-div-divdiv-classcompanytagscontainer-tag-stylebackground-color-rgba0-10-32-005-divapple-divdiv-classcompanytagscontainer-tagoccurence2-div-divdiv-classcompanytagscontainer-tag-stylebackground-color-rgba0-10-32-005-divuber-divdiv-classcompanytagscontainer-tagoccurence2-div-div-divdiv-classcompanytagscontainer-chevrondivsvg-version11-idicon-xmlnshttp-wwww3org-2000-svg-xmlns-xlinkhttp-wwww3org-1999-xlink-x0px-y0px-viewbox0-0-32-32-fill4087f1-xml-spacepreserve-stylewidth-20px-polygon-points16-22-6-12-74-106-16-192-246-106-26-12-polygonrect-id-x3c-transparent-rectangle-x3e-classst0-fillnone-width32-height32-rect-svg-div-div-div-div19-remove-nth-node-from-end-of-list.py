@@ -17,7 +17,7 @@ class Solution:
             
         print(total_length)
         
-        if total_length == 1:
+        if total_length == 1: #important [1], n=1
             return global_head.next
         
         #Node to remove
@@ -34,7 +34,7 @@ class Solution:
         while curr:
             len1 += 1
             if len1==n:
-                if n==1:
+                if n==1: #Important - [1,2], n=2
                     global_head = curr.next
                 else:
                     prev.next = curr.next        
